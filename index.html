@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f7f2">
+  <title>OffCampus — Life beyond lectures</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <a href="#home" class="brand"><span class="brand-mark">o.</span><span>OffCampus</span></a>
+      <p class="nav-label">YOUR SPACE</p>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#home" class="nav-link active"><span class="nav-icon">⌂</span> Home</a>
+        <a href="#feed" class="nav-link"><span class="nav-icon">◎</span> Explore</a>
+        <a href="#profile-card" class="nav-link"><span class="nav-icon">◉</span> My profile</a>
+        <a href="#create-post" class="nav-link"><span class="nav-icon">＋</span> Create post</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="sidebar-note"><span class="note-icon">✳</span><p>Your space. Your voice. Your people.</p></div>
+        <p class="sidebar-footer">OFFCAMPUS © 2026</p>
+      </div>
+    </aside>
+
+    <main class="main-content" id="home">
+      <header class="topbar">
+        <div><p class="eyebrow">YOUR COMMUNITY</p><h1>Life beyond lectures<span>.</span></h1></div>
+        <div class="topbar-actions">
+          <label class="search-box"><span aria-hidden="true">⌕</span><input type="search" id="post-search" placeholder="Search the feed..." aria-label="Search posts"></label>
+          <div class="my-avatar" aria-label="Your profile">YO</div>
+        </div>
+      </header>
+
+      <section class="welcome-banner">
+        <div class="banner-copy">
+          <span class="banner-label">A LITTLE MORE YOU</span>
+          <h2>Life doesn't end<br>when class does.</h2>
+          <p>Share what you're learning, loving, making, and exploring.</p>
+          <a class="banner-button" href="#create-post">Share something <span>↗</span></a>
+        </div>
+        <div class="banner-art" aria-hidden="true"><span class="art-circle circle-one"></span><span class="art-circle circle-two"></span><span class="art-star">✳</span><span class="art-word">your<br>world.</span></div>
+      </section>
+
+      <section class="composer card" id="create-post">
+        <div class="composer-heading"><div class="my-avatar">YO</div><div><h2>What's on your mind?</h2><p>Good thoughts deserve a little space.</p></div></div>
+        <form id="post-form">
+          <label for="post-content" class="visually-hidden">Write your post</label>
+          <textarea id="post-content" rows="3" maxlength="1000" placeholder="Something interesting happened today..."></textarea>
+          <div class="media-controls">
+            <label for="post-media" class="media-select-button">＋ Add photo or video</label>
+            <input id="post-media" type="file" accept="image/jpeg,image/png,image/gif,image/webp,video/mp4,video/webm,video/ogg" aria-label="Choose a photo or video">
+            <span class="media-limit">Images up to 10 MB · Videos up to 50 MB</span>
+          </div>
+          <div id="media-preview" class="media-preview" hidden></div>
+          <div class="composer-footer"><span class="composer-hint">✦ Be kind. Be yourself.</span><button type="submit" class="primary-button">Publish post <span>↗</span></button></div>
+        </form>
+      </section>
+
+      <section class="feed-section" id="feed">
+        <div class="section-heading"><div><p class="eyebrow">THE LATEST</p><h2>Your community feed</h2></div><span class="live-label"><span class="live-dot"></span> Happening here</span></div>
+        <div id="feed-list" class="feed-list"></div>
+        <p id="no-posts" class="no-posts" hidden>No posts found. Try another search or share something new.</p>
+      </section>
+      <footer class="main-footer"><span>OffCampus</span><span>Made for life beyond lectures.</span></footer>
+    </main>
+
+    <aside class="right-sidebar">
+      <section class="profile-card card" id="profile-card">
+        <div class="profile-cover"><span class="cover-shape shape-one"></span><span class="cover-shape shape-two"></span></div>
+        <div class="profile-info">
+          <div class="profile-avatar">YO</div>
+          <h2>You</h2>
+          <p class="profile-handle">@you</p>
+          <p class="profile-bio">Student life, random thoughts, and everything in between.</p>
+          <div class="profile-stats">
+            <div><strong id="your-post-count">0</strong><span>Posts</span></div>
+            <div><strong id="your-follower-count">0</strong><span>Followers</span></div>
+            <div><strong id="your-following-count">0</strong><span>Following</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="side-section followers-section" id="followers">
+        <div class="side-heading"><h2>Your followers</h2><span class="side-caption">Your people</span></div>
+        <div id="followers-list" class="suggested-people"><p class="composer-hint">Loading followers...</p></div>
+      </section>
+
+      <section class="side-section" id="trending">
+        <div class="side-heading"><h2>Trending topics</h2><span>✳</span></div>
+        <a href="#feed" class="trend-item"><span class="trend-number">01</span><span><strong>#CampusLife</strong><small>College & everyday life</small></span><span class="trend-arrow">↗</span></a>
+        <a href="#feed" class="trend-item"><span class="trend-number">02</span><span><strong>#BuildInPublic</strong><small>Ideas, projects & progress</small></span><span class="trend-arrow">↗</span></a>
+        <a href="#feed" class="trend-item"><span class="trend-number">03</span><span><strong>#LifeLately</strong><small>Little moments, big stories</small></span><span class="trend-arrow">↗</span></a>
+      </section>
+
+      <section class="side-section suggestions-section">
+        <div class="side-heading"><h2>People to know</h2><span class="side-caption">Suggested</span></div>
+        <div id="suggested-people" class="suggested-people"></div>
+      </section>
+      <div class="side-note"><p>Take a breath.</p><p>You're doing just fine. 🌿</p></div>
+    </aside>
+  </div>
+</body>
+</html>

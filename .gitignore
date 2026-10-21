@@ -1,0 +1,10 @@
+node_modules/
+.env
+.env.*
+!.env.example
+
+offcampus.db
+offcampus.db-shm
+offcampus.db-wal
+
+uploads/
